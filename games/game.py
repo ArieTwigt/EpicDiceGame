@@ -4,6 +4,7 @@ from typing import Literal
 
 class Game:
 
+
     def __init__(self, 
                  max_turns:int,
                  dice: Dice ):
@@ -36,7 +37,6 @@ class Game:
                 total_score = self.__show_score()
                 print(f"Total_score {total_score}")
                 print("🏁 Finish")
-         
         else:
             print("Game is already over")
 
@@ -44,6 +44,15 @@ class Game:
     def __show_score(self):
         total_score = sum(self.throws)
         return total_score
+    
+
+    def store_file(self):
+
+        summary = f'''
+                  {self.max_turns}
+                  '''
+        with open("results.txt", "w+") as file:
+            file.write(summary)
 
 
     def __repr__(self):

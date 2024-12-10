@@ -46,3 +46,4 @@ def test_type_error_dice():
 def test_negative_value_dice():
     with raises(ValueError):
         my_dice = Dice(-10)
+
